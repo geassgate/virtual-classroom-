@@ -1,0 +1,75 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link  href="'https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap'">
+    <link rel="icon" type="image/png" href="{% static 'images/icon.png' %}">
+
+    <link  href="{% static '/css/fonts/icomoon/style.css' %}">
+    <link  href="{% static '/css/owl.carousel.min.css' %}">
+
+
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <title>Login</title>
+  </head>
+  <body style="background-color: #ffffff;">
+    
+  <div class="content" style="padding: 7rem 0;">
+    {% for ma in messages %}
+    <div class="alert alert-danger" role="alert">{{ma}}</div>
+    {% endfor %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img  id="imageId" src="{% static 'images/undraw_remotely_2j6y.jpg'%}" class="img-fluid" >
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Sign In</h3>
+              <p class="mb-4" style="color:#b3b3b3;">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+            </div>
+            <form method="post" action="{% url 'vuniversity:Login' %}">
+                {% csrf_token %} 
+              <div class="form-group first" style="background: #edf2f5;    border-bottom: none;    position: relative;">
+                <label for="username">Username</label>
+                <input name="id" type="text" class="form-control" id="username">
+
+              </div>
+              <div class="form-group last mb-4" style="background: #edf2f5;">
+                <label for="password">Password</label>
+                <input name="password" type="password" class="form-control" id="password">
+                
+              </div>
+              
+
+              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+        
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static '/javascept/popper.min.js' %}"></script>
+  <script src="{% static '/javascept/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static '/javascept/bootstrap.min.js' %}"></script>
+  <script src="{% static '/javascept/main.js' %}"></script>
+  </body>
+</html>
